@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from 'app/services/api.service';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -20,29 +20,33 @@ export class ReservationsComponent implements AfterViewInit, OnInit {
     @ViewChild(MatPaginator) paginator: MatPaginator;
     @ViewChild(MatSort) sort: MatSort;
 
-    constructor(private apiService: ApiService) {}
+    constructor(private apiService: ApiService) { }
 
-    ngOnInit() {
-
-    }
-
-    ngAfterViewInit() {
-        this.filReservations();
+    async ngOnInit(): Promise<void> {
+        await this.filReservations();
         this.fillTable();
     }
 
-    filReservations() {
-        this.apiService.getReservations().subscribe((res: any) => {
-            res.success ? this.reservations = res.Reservations : console.log(res.message);
-        });
+    ngAfterViewInit() { }
+
+    filReservations(): Promise<void> {
+        return new Promise((resolve, reject) => {
+            this.apiService.getReservations().subscribe((res: any) => {
+                if (res.success) {
+                    this.reservations = res.Reservations;
+                    resolve();
+                } else {
+                    reject();
+                }
+            });
+        })
     }
 
     applyFilter(filterValue: string) {
         filterValue = filterValue.trim();
         filterValue = filterValue.toLowerCase();
-        this.dataSource.filter = filterValue;
 
-        this.fillTable()
+        this.dataSource.filter = filterValue;
     }
 
     fillTable() {
