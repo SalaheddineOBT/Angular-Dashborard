@@ -16,6 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { VoituresModule } from 'app/pages/voitures/voitures.module';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { MatTableModule } from '@angular/material/table';
     MatPaginatorModule,
     MatTableModule,
     MatTooltipModule,
+    MatMenuModule,
     VoituresModule,
   ],
   declarations: [

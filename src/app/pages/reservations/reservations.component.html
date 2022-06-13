@@ -61,7 +61,28 @@
 
                                 <ng-container matColumnDef="Actions">
                                     <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
-                                    <mat-cell class="text-center" *matCellDef="let row" data-label="Actions">  </mat-cell>
+                                    <mat-cell class="text-center" *matCellDef="let row" data-label="Actions"> 
+                                        <!-- <i class="material-icons">list</i> -->
+                                    <div class="actions-trigger" [matMenuTriggerFor]="matMenu">
+                                        <i class="material-icons" style="font-size: 35px">list</i>
+                                    </div>
+                                        <mat-menu #matMenu="matMenu" class="cust-menu cust-menu--horizontal cust-menu--actions" overlapTrigger
+                                        xPosition="before">
+                                            <span mat-menu-item class="menu-item" matTooltip="" (click)="DeleteRes()">
+                                                <i class="material-icons delete">delete</i>
+                                                <span>Delete</span>
+                                            </span>
+                                            <span mat-menu-item class="menu-item" matTooltip="">
+                                                <i class="material-icons edit">edit</i>
+                                                <span>Edit</span>
+                                            </span>
+                                            <span mat-menu-item class="menu-item" matTooltip="">
+                                                <i class="material-icons visibility">visibility</i>
+                                                <span class="material-symbols-outlined"> Détails </span>
+                                            </span>
+                                        </mat-menu>
+                                        
+                                    </mat-cell>
                                 </ng-container>
                                 
                                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -70,7 +91,7 @@
                             
                             <mat-paginator [pageSizeOptions]="[10, 15]"></mat-paginator>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

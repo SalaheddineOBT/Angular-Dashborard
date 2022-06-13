@@ -1,0 +1,263 @@
+/* .container{
+    max-width: 1000px;
+}
+.col-bold{
+    font-weight: 700;
+    font-size: 1rem!important;
+    padding: .5rem;
+    color: #F8F2EA!important;
+}
+.col-item{
+    font-size: 1rem!important;
+}
+.col-id{
+    width: 1rem;
+}
+.responsive-tables{
+    width: 100%;
+}
+.button-75{
+  align-items: center;
+  background-image: linear-gradient(135deg,#08668b, hsl(197, 82%, 44%));
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  font-weight: 600;
+  width: 6rem;
+  outline: none;
+  border: none;
+  padding: .5rem;
+}
+.button-75:active{
+  outline: 0;
+}
+.button-75:hover{
+  outline: 0;
+}
+.button-75 span{
+    font-size: 1.1rem;
+  transition: all 200ms;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.button-75:hover span{
+  transform: scale(.9);
+}
+.col{
+    color: #264973;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.container-fluid{
+    margin-top: 2rem;
+}
+.responsive-table li{
+    border-radius: 6px;
+    padding: .3rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.responsive-table .table-header{
+    background-color: #08668b;
+    font-size: 14px;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.03em;
+    margin-right: 2rem!important;
+}
+.responsive-table .table-rows{
+    background-color: #fff;
+    margin-right: 2rem!important;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.responsive-table .col-1{
+    flex-basis: 10%;
+}
+.responsive-tablee .col-2{
+    flex-basis: 40%;
+}
+.responsive-table .col-3{
+    flex-basis: 25%;
+    text-align: left;
+}
+.responsive-table .col-4{
+    flex-basis: 25%;
+}
+
+.col-item{
+    text-align: center;
+    display: flex;
+    padding: .3rem;
+    justify-content: center; 
+    align-items: center;
+}
+@media all and (max-width: 767px){
+    .responsive-table .table-header{
+        display: none;
+    }
+    .responsive-table li{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+    .responsive-table .col{
+        display: flex;
+        padding: 10px 0;
+    }
+    .table-rows{
+        width: 100%;
+        margin-left: -1rem;
+    }
+    .responsive-table .col-item:before{
+        color: #264973;
+        padding-right: 10px;
+        content: attr(data-label);
+        text-align: left;
+        text-align: left;
+        font-weight: 700;
+    }
+    .col-item{
+        width: 100%;
+        text-align: left;
+        justify-content: flex-start!important;
+    }
+    img{
+        width: 65vw;
+    }
+    .col{
+        justify-content: flex-start!important;
+    }
+    li{
+        padding-top: 2rem!important;
+        padding-bottom: 2rem!important;
+    }
+}
+i{
+    width: 40px;
+    height: 40px;
+    border:.1rem solid  #08668b;
+    padding: .5rem;
+    margin-left: .5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    justify-content: center;
+    border-radius: 100%;
+    cursor: pointer;
+} */
+
+
+
+
+body {
+    font-family: 'Covered By Your Grace', cursive;
+    line-height: 1.25;
+    
+  }
+  
+  
+  @media screen and (max-width: 960px) {
+    .mat-table {
+      border: 0;
+      vertical-align: middle
+    }
+  
+    .mat-table caption {
+      font-size: 1em;
+    }
+    
+    /*  Enable this to hide header
+    .mat-table .mat-header-cell {
+      
+      border: 10px solid;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    */
+    .mat-table .mat-row {
+      border-bottom: 5px solid #ddd;
+      display: block;
+    }
+    /*
+    .mat-table .mat-row:nth-child(even) {background: #CCC}
+    .mat-table .mat-row:nth-child(odd) {background: #FFF}
+    */
+    .mat-table .mat-cell {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 1em;
+      text-align: right;
+      font-weight: bold;
+      height:30px;
+      margin-bottom: 4%;
+    }
+    .mat-table .mat-cell:before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: normal;
+      
+      font-size: .85em;
+    }
+    .mat-table .mat-cell:last-child {
+      border-bottom: 0;
+      justify-content: right !important;
+    }
+      .mat-table .mat-cell:first-child {
+      margin-top: 4%;
+    }
+  }
+  mat-cell, mat-header-cell, mat-footer-cell
+  {
+      justify-content: center!important;
+  }
+  :host ::ng-deep{
+    .mat-cell:last-of-type, mat-header-cell:last-of-type, mat-footer-cell:last-of-type{
+        justify-content: right !important;
+        max-width: 85px;
+    }
+    mat-cell:first-of-type, mat-header-cell:first-of-type, mat-footer-cell:first-of-type{   
+        justify-content: left !important;
+        max-width: 30px;
+        padding-left: 15px !important;
+    }
+  }
+  .menu-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    .delete{
+        margin-right: 0.7rem;
+        color: #FF4141;
+    }
+    .edit{
+        margin-right: 0.7rem;
+        color: #2FAE90;
+    }
+    .visibility{
+        margin-right: 0.7rem;
+        color: #2B79C3;
+    }
+  }
+  .actions-trigger{
+      cursor: pointer;
+  }

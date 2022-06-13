@@ -3,22 +3,25 @@ import { ApiService } from 'app/services/api.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatMenuTrigger } from '@angular/material/menu';
+import Swal from 'sweetalert2'
 
 @Component({
     selector: 'app-reservations',
     templateUrl: './reservations.component.html',
-    styleUrls: ['./reservations.component.css']
+    styleUrls: ['./reservations.component.scss']
 })
 export class ReservationsComponent implements AfterViewInit, OnInit {
 
     reservations: any = [];
     reservation = [];
 
-    displayedColumns = ['ID', 'PriceTotal', 'RentOn', 'ReturnOn', 'RentDurationDay', 'ReservationDate', 'Client', 'Car'];
+    displayedColumns = ['ID', 'PriceTotal', 'RentOn', 'ReturnOn', 'RentDurationDay', 'ReservationDate', 'Client', 'Car', 'Actions'];
     dataSource: MatTableDataSource<Reservation>;
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
     @ViewChild(MatSort) sort: MatSort;
+    @ViewChild(MatMenuTrigger, { static: true }) matMenu: MatMenuTrigger;
 
     constructor(private apiService: ApiService) { }
 
@@ -48,6 +51,27 @@ export class ReservationsComponent implements AfterViewInit, OnInit {
 
         this.dataSource.filter = filterValue;
     }
+
+    DeleteRes() {
+        Swal.fire({
+        title: 'Are you sure?',
+        text: 'You wont To Delete This Reservation ?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+            )
+        }
+        })
+    }
+
 
     fillTable() {
         this.dataSource = null;
