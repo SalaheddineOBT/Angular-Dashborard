@@ -23,24 +23,28 @@ export class ApiService {
 
     constructor(private httpClient: HttpClient) { };
 
-    getCars(car: any) {
-        return this.httpClient.post(this.uri + 'Cars/cars.php', car);
+    getCars() {
+        return this.httpClient.post(this.uri + 'Cars/cars.php', this.all);
     };
 
-    getMarques(marque: any) {
-        return this.httpClient.post(this.uri + 'Marques/marques.php', marque);
+    getMarques() {
+        return this.httpClient.post(this.uri + 'Marques/marques.php', this.all);
     };
 
-    getCategories(marque: any) {
-        return this.httpClient.post(this.uri + 'Categories/categories.php', marque);
+    getCategories() {
+        return this.httpClient.post(this.uri + 'Categories/categories.php', this.all);
     };
 
-    getCar(id: any, selected: any) {
-        return this.httpClient.post(this.uri + `Cars/cars.php?id=${id}`, selected);
+    getCar(id: any) {
+        return this.httpClient.post(this.uri + `Cars/cars.php?id=${id}`, this.byId);
     };
 
-    getReservations(selected: any) {
-        return this.httpClient.post(this.uri + 'Reservations/reservations.php', selected);
+    getReservations() {
+        return this.httpClient.post(this.uri + 'Reservations/reservations.php', this.all);
+    }
+
+    getClients() {
+        return this.httpClient.post(this.uri + 'Clients/clients.php', this.all);
     }
 
 }

@@ -62,30 +62,31 @@ export class VoituresComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.fillCategories(this.apiService.all);
-        this.fillCars(this.apiService.all);
-        this.fillMarques(this.apiService.all);
+        this.fillCategories();
+        this.fillCars();
+        this.fillMarques();
     }
 
-    fillCategories(i: any) {
-        this.apiService.getCategories(i).subscribe((res: any) => {
+    fillCategories() {
+        this.apiService.getCategories().subscribe((res: any) => {
             res.success ? this.categories = res.Categories : console.log(res.message);
         });
     }
 
-    fillMarques(i: any) {
-        this.apiService.getMarques(i).subscribe((res: any) => {
+    fillMarques() {
+        this.apiService.getMarques().subscribe((res: any) => {
             res.success ? this.marques = res.Marques : console.log(res.message);
         });
     }
 
-    fillCars(i: any) {
-        this.apiService.getCars(i).subscribe((res: any) => {
+    fillCars() {
+        this.apiService.getCars().subscribe((res: any) => {
             if (res.success) {
                 this.cars = res.Cars
                 this.filterMarques = res.Cars;
             } else {
-             console.log(res.message); }
+                console.log(res.message);
+            }
         });
 
     }

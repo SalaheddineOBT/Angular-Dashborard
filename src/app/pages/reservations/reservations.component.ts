@@ -9,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
     templateUrl: './reservations.component.html',
     styleUrls: ['./reservations.component.css']
 })
-export class ReservationsComponent implements AfterViewInit {
+export class ReservationsComponent implements AfterViewInit, OnInit {
 
     reservations: any = [];
     reservation = [];
@@ -22,9 +22,9 @@ export class ReservationsComponent implements AfterViewInit {
 
     constructor(private apiService: ApiService) {}
 
-    // ngOnInit() {
+    ngOnInit() {
 
-    // }
+    }
 
     ngAfterViewInit() {
         this.filReservations();
@@ -32,7 +32,7 @@ export class ReservationsComponent implements AfterViewInit {
     }
 
     filReservations() {
-        this.apiService.getReservations(this.apiService.all).subscribe((res: any) => {
+        this.apiService.getReservations().subscribe((res: any) => {
             res.success ? this.reservations = res.Reservations : console.log(res.message);
         });
     }

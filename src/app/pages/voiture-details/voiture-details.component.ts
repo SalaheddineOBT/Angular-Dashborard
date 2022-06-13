@@ -27,7 +27,7 @@ export class VoitureDetailsComponent implements OnInit {
 
     fillForm = async () => {
         const id = this.routAct.snapshot.paramMap.get('id');
-        await this.apiService.getCar(id, this.apiService.byId).subscribe((res: any) => {
+        await this.apiService.getCar(id).subscribe((res: any) => {
             if (res.success) {
                 this.car = res.Car;
 

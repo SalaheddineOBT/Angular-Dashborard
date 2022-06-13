@@ -2,35 +2,46 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card" style="padding-bottom: 1rem;">
                     <div class="card-header" style="background-color: #107fb6!important;">
                         <h3 class="card-title text-center" style="color: #fff!important;font-weight: 500;">Clients Management</h3>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <th> ID </th>
-                                    <th> Name </th>
-                                    <th> Country </th>
-                                    <th> City </th>
-                                    <th> Salary </th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td> 1 </td>
-                                        <td> Dakota Rice </td>
-                                        <td> Niger </td>
-                                        <td> Oud-Turnhout </td>
-                                        <td class="text-primary"> $36,738 </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                        <div class="example-header" fxLayout="row" style="margin-top: 1rem;">
+                            <mat-form-field>
+                                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                            </mat-form-field>
                         </div>
+                        
+                        <div class="example-container mat-elevation-z8 container-fluid" style="margin-top: 1rem;">
+                            <mat-table [dataSource]="dataSource" matSort>
+                        
+                                <ng-container matColumnDef="ID">
+                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                                    <mat-cell class="text-center" *matCellDef="let row" data-label="ID"> {{row.ID}} </mat-cell>
+                                </ng-container>
+                        
+                                <ng-container matColumnDef="Name">
+                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                                    <mat-cell class="text-center" *matCellDef="let row" data-label="Name"> {{row.Name}}</mat-cell>
+                                </ng-container>
+                        
+                                <ng-container matColumnDef="NationalId">
+                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> National ID </mat-header-cell>
+                                    <mat-cell class="text-center" *matCellDef="let row" data-label="NationalId"> {{row.NationalId}} </mat-cell>
+                                </ng-container>
+                                
+                                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                <mat-row *matRowDef="let row; columns: displayedColumns;" class="text-center"></mat-row>
+                            </mat-table>
+                            
+                            <mat-paginator [pageSizeOptions]="[10, 15]"></mat-paginator>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-  </div>
-  
+</div>

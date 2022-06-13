@@ -73,9 +73,9 @@ export class LoginComponent implements OnInit {
                 class: 'danger'
             });
         }
-        /*const username = btoa('salaheddine');
+        const username = btoa('salaheddine');
         this.testService.setCookie('uid', username, 30);
-        this.router.navigate(['/dashboard']);*/
+        this.router.navigate(['/dashboard']);
     }
 
     myFunction = () =>  {
