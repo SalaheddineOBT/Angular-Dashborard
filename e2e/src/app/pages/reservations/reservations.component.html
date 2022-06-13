@@ -7,13 +7,14 @@
                         <h3 class="card-title text-center" style="color: #fff!important;font-weight: 500;">Reservations Management</h3>
                     </div>
                     <div class="card-body">
+
                         <div class="example-header" fxLayout="row" style="margin-top: 1rem;">
                             <mat-form-field>
                                 <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
                             </mat-form-field>
                         </div>
-
-                        <div class="example-container mat-elevation-z8 container-fluid" style="margin-top: .2rem;">
+                        
+                        <div class="example-container mat-elevation-z8 container-fluid" style="margin-top: 1rem;">
                             <mat-table [dataSource]="dataSource" matSort>
                         
                                 <ng-container matColumnDef="ID">
@@ -62,14 +63,18 @@
                             
                             <mat-paginator [pageSizeOptions]="[10, 15]"></mat-paginator>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+  </div>
+  
 
-<!-- <div class="table-responsive">
+
+
+  <!-- <div class="table-responsive">
     <table class="table">
         <thead class=" text-primary">
             <th> ID </th>
@@ -89,4 +94,6 @@
         </tbody>
     </table>
 </div> -->
+
+
 <!-- {{reservation | json}} -->

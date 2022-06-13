@@ -1,0 +1,188 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" style="background-color: #107fb6!important;">
+                        <h3 class="card-title text-center" style="color: #fff!important;font-weight: 500;">Car Details</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <button class="cta" (click)="back()" >
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                                <path style="fill:#3D6DEB;" d="M488.728,232.727l-384,0.002v-34.911c0-9.413-5.671-17.9-14.367-21.501
+                                    c-8.699-3.603-18.708-1.61-25.363,5.046L6.817,239.544c-9.089,9.089-9.089,23.824,0,32.912l58.182,58.182
+                                    c4.453,4.453,10.404,6.817,16.462,6.817c2.998,0,6.021-0.58,8.901-1.772c8.696-3.603,14.367-12.088,14.367-21.501v-34.908l384-0.003
+                                    c12.853,0,23.273-10.42,23.273-23.273C512.001,243.147,501.581,232.727,488.728,232.727z"/>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                            </svg>
+                            <span class="hover-underline-animation"> Back </span>
+                        </button>
+                        
+                        <!-- <ng-container *ngIf="car.length > 0" > -->
+                        <ng-container  >
+                            <div class="container-fluid">
+                                <div class="row pt-5">
+                                    <div class="col-md-6 p-5" style="height: 100%;">
+                            
+                                        <div class="row d-flex">
+                                            <div class="col-md-12">
+                                                <img src="https://rumbustious-hilltop.000webhostapp.com/API/Photos/Marques/{{car[0].Marque}}" class="img-thumbnail" style="background-color: #fff; margin-bottom: 1rem;" >
+                                                <h3><strong>{{car[0].Name}}</strong></h3>
+                                                <p>{{car[0].Description}}</p>
+                                                <h5><strong>Price :</strong>&nbsp;<span [style.color]= "'{{car[0].Color}}'" >{{car[0].PricePerDay}} $</span>/Day</h5>
+                                            </div>
+                            
+                                            <div class="col-sm-4 d-flex p-3">
+                                                <i style="display:flex;justify-content:center;align-items:center;font-size: 2.9rem;width: 4rem;padding:.5rem;border:1px solid #000;"
+                                                    class="fa fa-tachometer p-2 img-thumbnail">
+                                                </i>
+                                                <span class="p-3 ml-3">5.6/100 MPG</span>
+                                            </div>
+                            
+                                            <div class="col-sm-4 d-flex p-3">
+                                                <i style="display:flex;justify-content:center;align-items:center;font-size: 2.9rem;width: 4rem;padding:.5rem;border:1px solid #000;"
+                                                    class="fa fa-suitcase p-2 img-thumbnail">
+                                                </i>
+                                                <span class="p-3 ml-3">2 BAGS</span>
+                                            </div>
+                            
+                                            <div class="col-sm-4 d-flex p-3">
+                                                <i style="display:flex;justify-content:center;align-items:center;font-size: 2.9rem;width: 4rem;padding:.5rem;border:1px solid #000;"
+                                                    class="fa fa-user p-2 img-thumbnail">
+                                                </i>
+                                                <span class="p-3 ml-3">{{car[0].PlaceNumber}} PASSENGERS</span>
+                                            </div>
+                                
+                                            <div class="col-sm-4 d-flex p-3">
+                                                <i style="display:flex;justify-content:center;align-items:center;font-size: 2.9rem;width: 4rem;padding:.5rem;border:1px solid #000;"
+                                                    class="material-icons p-2 img-thumbnail">door_front
+                                                </i>
+                                                <span class="p-3 ml-3">{{car[0].NumbreDoors}} doors</span>
+                                            </div>
+                            
+                                            <div class="col-sm-4 d-flex p-3">
+                                                <i style="display:flex;justify-content:center;align-items:center;font-size: 2.9rem;width: 4rem;padding:.5rem;border:1px solid #000;"
+                                                    class="fa fa-bluetooth p-2 img-thumbnail">
+                                                </i>
+                                                <span class="p-3 ml-3">bluetooth Yes</span>
+                                            </div>
+                            
+                                            <div class="col-sm-4 d-flex p-3">
+                                                <i style="display:flex;justify-content:center;align-items:center;font-size: 2.9rem;width: 4rem;padding:.5rem;border:1px solid #000;"
+                                                    class="material-icons p-2 img-thumbnail">minor_crash
+                            
+                                                </i>
+                                                <span class="p-3 ml-3">Automatic</span>
+                                            </div>
+                            
+                                        </div>
+                            
+                            
+                                        <div class="row">
+                                            <div class="col-sm-4 d-flex p-3">
+                                                <i style="display:flex;justify-content:center;align-items:center;font-size: 2.9rem;width: 4rem;padding:.5rem;border:1px solid #000;"
+                                                    class="material-icons p-2 img-thumbnail">electric_car
+                                                </i>
+                                                <span class="p-3 ml-3">Electric</span>
+                                            </div>
+                                            <div class="col-sm-4 d-flex p-3">
+                                                <i style="display:flex;justify-content:center;align-items:center;font-size: 2.9rem;width: 4rem;padding:.5rem;border:1px solid #000;"
+                                                    class="material-icons p-2 img-thumbnail">local_gas_station</i>
+                                                <span class="p-3 ml-3">Essence</span>
+                                            </div>
+                                            <div class="col-sm-4 d-flex p-3">
+                                                <!-- <img class="img-fluid img-thumbnail" style="width: 4rem;padding:.5rem;border:1px solid #000;"
+                                                    src="https://user-images.githubusercontent.com/30325749/29091990-f42efb10-7c84-11e7-8527-38bec8fda4be.png"
+                                                    alt=""> -->
+                                                    <i style="display:flex;justify-content:center;align-items:center;font-size: 2.9rem;width: 4rem;padding:.5rem;border:1px solid #000;"
+                                                    class="material-icons p-2 img-thumbnail">airline_seat_recline_normal
+                                                    </i>
+                                                <span class="p-3 ml-3 ">AirBag</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                    <div class="col-md-6 p-5" style="height: 100%;">
+                                        
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <img class="img-thumbnail" style="width:100%;margin: auto;" src="https://rumbustious-hilltop.000webhostapp.com/API/Photos/cars/{{car[0].Photo}}" />
+                                            </div>
+    
+                                            <div class="col-md-8 mt-3">
+                                                <img class="img-thumbnail" style="width:100%;margin: auto;" src="https://rumbustious-hilltop.000webhostapp.com/API/Photos/cars/{{car[0].Photo}}" />
+                                                <div class="row mt-2">
+                                                    <div class="col-md-6 p-2">
+                                                        <img class="img-thumbnail" style="width:100%;margin: auto;" src="https://rumbustious-hilltop.000webhostapp.com/API/Photos/cars/{{car[0].Photo}}" />
+                                                    </div>
+                                                    <div class="col-md-6 p-2">
+                                                        <img class="img-thumbnail" style="width:100%;margin: auto;" src="https://rumbustious-hilltop.000webhostapp.com/API/Photos/cars/{{car[0].Photo}}" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <div class="col-md-4 mt-3">
+                                                <div class="mb-3">
+                                                    <img class="img-thumbnail" style="width:100%;margin: auto;" src="https://rumbustious-hilltop.000webhostapp.com/API/Photos/cars/{{car[0].Photo}}" />
+                                                </div>
+                                                <div class="mb-3">
+                                                    <img class="img-thumbnail" style="width:100%;margin: auto;" src="https://rumbustious-hilltop.000webhostapp.com/API/Photos/cars/{{car[0].Photo}}" />
+                                                </div>
+                                                <div>
+                                                    <img class="img-thumbnail" style="width:100%;margin: auto;" src="https://rumbustious-hilltop.000webhostapp.com/API/Photos/cars/{{car[0].Photo}}" />
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                    </div>
+                            
+                                </div>
+                            </div>
+                        </ng-container>
+
+                        <ng-container *ngIf="car.length === 0">
+                            <div class="container">
+                                <div>
+                                    <img style="width: 100%;" src="../../../assets/img/Preloader.gif" alt="">
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  
