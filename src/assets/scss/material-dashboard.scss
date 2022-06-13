@@ -57,3 +57,38 @@
  @import "core/responsive";
 
 @import "core/angular-modal.scss";
+
+
+.danger{
+    background: #FFA7A7;
+    color: #975453;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.warning{
+    background: #FFDF7F;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #9F8653;
+}
+.success button{
+    color: #557d83;
+}
+
+.danger button{
+    color: #975453;
+}
+
+.warning button{
+    color: #9F8653;
+}
+
+.success{
+    background: #bfe1e7;
+    color: #557d83;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+

@@ -1,0 +1,41 @@
+<div class="auth-wrapper">
+    <div class="auth-form">
+        <mat-card class="p-4">
+            <mat-card-content>
+
+                <div class="login-header-wrapper">
+                    <h2>Login</h2>
+                    <p>Sign in to continue.</p>
+                </div>
+
+                <form [formGroup]="loginForm">
+
+                    <div class="form-outline mb-4 ml-4 mr-4">
+                        <label class="form-label" for="form2Example1">Email</label>
+                        <input type="email" formControlName="email"  id="form2Example1" class="form-control" placeholder="John@email.com" />
+                        <mat-error *ngIf="fieldHasError('email')">
+                            {{ getErrorMessage("email") }}
+                        </mat-error>
+                    </div>
+                    
+                    <!-- Password input -->
+                    <div class="form-outline mb-4 ml-4 mr-4">
+                        <label class="form-label" for="form2Example2">Password</label>
+                        <input [type]="!showPassword ? 'password' : 'text'" formControlName="password" id="form2Example2" class="form-control" placeholder="Enter Your Password" />
+                        <mat-error *ngIf="fieldHasError('password')">
+                            {{ getErrorMessage("password") }}
+                        </mat-error>
+                    </div>
+
+                    <input type="checkbox" style="margin-bottom: .4rem;" class="ml-4 mr-3" (change)="myFunction()">Show Password
+
+                    <div class="d-flex justify-content-center">
+                        <button type="button" [disabled]="!loginForm.valid" class="btn btn-primary btn-block m-4" (click)="onLoginSubmit()">Login</button>
+                    </div>
+                    
+                </form>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

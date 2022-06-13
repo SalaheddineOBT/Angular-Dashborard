@@ -1,0 +1,143 @@
+<form class="p-5" [formGroup]="infoForm">
+
+    <h4 class="title">
+        {{methodeForm}} Car :
+    </h4>
+    <span style="cursor: pointer; font-size: 2.5rem; position: absolute; top:0;right:1rem;" (click)="modal.close()">&times;</span>
+    <hr>
+
+    <!-- {{infoForm.value | json}} -->
+    <!-- <hr> -->
+    <!-- {{car | json}} -->
+
+    <div class="row pt-2">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="Name" class="form-label">Name :</label>
+                <input type="text" [ngClass]="{'is-invalid': isInvalid('name')}" formControlName="name" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="color" class="form-label">Color :</label>
+                <input type="color" class="form-control" [ngClass]="{'is-invalid': isInvalid('color')}" formControlName="color">
+            </div>
+
+            <div class="mb-3">
+                <label for="doorNum" class="form-label">Door Number :</label>
+                <input type="number" min="1" class="form-control" [ngClass]="{'is-invalid': isInvalid('doorNum')}" formControlName="doorNum">
+            </div>
+            
+            <div class="mb-3">
+                <label for="placeNum" class="form-label">Place Number :</label>
+                <input type="number" min="2" class="form-control" [ngClass]="{'is-invalid': isInvalid('placeNum')}" formControlName="placeNum">
+            </div>
+
+            <div formGroupName="options">
+                <label class="form-label">Options :</label>
+                <div class="form-check mb-1">
+                    <input type="checkbox" formControlName="airbag">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        AirBag
+                    </label>
+                </div>
+                <div class="form-check mb-1">
+                    <input type="checkbox" formControlName="blutooth">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Bluetooth
+                    </label>
+                </div>
+                <div class="form-check mb-1">
+                    <input type="checkbox" formControlName="aircond">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Air-Conditioner
+                    </label>
+                </div>
+                <div class="form-check mb-1">
+                    <input type="checkbox" formControlName="gps">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        GPS
+                    </label>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <label for="placeNum" class="form-label">Statue :</label>
+                <select class="form-control" [ngClass]="{'is-invalid': isInvalid('marque')}" formControlName="marque">
+                    <option selected value="" disabled>Select Statue</option>
+                    <option value="Renting">Renting</option>
+                    <option value="Not Renting">Not Renting</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="photo" class="form-label">Choose Photo :</label>
+                <input type="file" class="form-control" (change)="UploadImg($event)" [ngClass]="{'is-invalid': isInvalid('photo')}">
+            </div>
+
+            <div class="mb-3">
+                <img style="height: 15rem;" [src]="imgPath" class="img-fluid">
+            </div>
+            <div class="mb-3">
+                <label for="KM" class="form-label">KM :</label>
+                <input type="number" class="form-control" min="1" [ngClass]="{'is-invalid': isInvalid('km')}" formControlName="km">
+            </div>
+            <div class="mb-3">
+                <label for="bagsNumber" class="form-label">Bags Number :</label>
+                <input type="number" class="form-control" min="1" [ngClass]="{'is-invalid': isInvalid('bagsNumber')}" formControlName="bagsNumber">
+            </div>
+
+            <div class="mb-3">
+                <label for="category" class="form-label">Category :</label>
+                <select class="form-control" [ngClass]="{'is-invalid': isInvalid('category')}" formControlName="category">
+                    <option selected value="" disabled>Select Category</option>
+                    <option *ngFor="let item of categories" value="{{item.Description}}">{{item.Description}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-2 mb-3">
+        <div class="col-md-6">
+            <label for="marque" class="form-label">Marque :</label>
+            <select class="form-control" [ngClass]="{'is-invalid': isInvalid('marque')}" formControlName="marque">
+                <option selected value="" disabled>Select Marque</option>
+                <option *ngFor="let item of marques" value="{{item.Libelle}}">{{item.Libelle}}</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="marque" class="form-label">Price Per Day :</label>
+            <input type="number" class="form-control" [ngClass]="{'is-invalid': isInvalid('price')}" formControlName="price">
+        </div>
+    </div>
+    <div class="row mt-2 mb-3">
+        <div class="col-md-12 mt-3">
+            <label class="form-label">Fuel :</label><br>
+            <mat-radio-group formControlName="fuel">
+                <mat-radio-button value="Diesel">Diesel</mat-radio-button>
+                <mat-radio-button value="Essence">Essence</mat-radio-button>
+                <mat-radio-button class="ml-2" value="Electric">Electric</mat-radio-button>
+                <mat-radio-button value="Hybrid">Hybrid</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12 mb-3">
+            <label for="description" class="form-label">Description :</label>
+            <textarea style="height: 10rem;width: 100%;" class="form-control" formControlName="description" [ngClass]="{'is-invalid': isInvalid('description')}" rows="3"></textarea>
+        </div>
+    </div>
+
+    <button type="button" [disabled]="!infoForm.valid" class="btn btn-primary" (click)="onValidate()">Validate</button>
+    <button type="button" class="btn btn-secondary" style="margin-left:.5rem ;" (click)="modal.close()">Cancel</button>
+
+</form>
+
+
+    <!-- {{infoForm.value | json}} -->
+<!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+<!-- <input type="text" formControlName="name">
+<input type="color" formControlName="color">
+<input type="number" formControlName="price" min="0"> -->

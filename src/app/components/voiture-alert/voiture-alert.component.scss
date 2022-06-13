@@ -1,0 +1,16 @@
+.mat-radio-group{
+    display:flex ;
+    width:70%;
+    margin: auto;
+    font-size:1em;
+    justify-content: space-between;
+}
+
+::ng-deep {
+    ngb-modal-window {
+        z-index: 1056 !important;
+    }
+}
+input:focus{
+    box-shadow: none!important;
+}

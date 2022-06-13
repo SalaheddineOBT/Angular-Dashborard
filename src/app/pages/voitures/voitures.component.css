@@ -1,0 +1,98 @@
+.tool-bare{
+    display: flex!important;
+    align-items: center!important;
+    flex-wrap: wrap!important;
+    width: 100%;
+    justify-content: space-between!important;
+}
+
+input:focus{
+    box-shadow: none!important;
+}
+.all{
+    display: flex;
+    align-items: center;
+    width: 7rem;
+    height: 7rem;
+    padding: 1rem;
+    font-weight: 600;
+    border-radius: .3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 1px solid #dee2e6;
+    justify-content: center;
+}
+.cardd{
+    height: 27rem;
+}
+.cardd img{
+    width: 100%;
+    height: 16rem;
+}
+.all:hover{
+    box-shadow: 0 0 10px 1px #dddd;
+}
+
+.dflex{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.badg{
+    position: absolute;
+    top: 23px;
+    left: 10px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.test{
+    transform: rotate(-43deg) translateY(-20px);
+    color: #fff;
+    font-weight: 600;
+    z-index: 2022;
+
+}
+.zed{
+    background: #107fb6;
+    width: 150%;height: 35px;
+    position: absolute;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-43deg) translateY(-20px);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    z-index: 1;
+    box-shadow: 0 5px 10px rgb(0,0,0,0.2);
+    font-weight: 500;
+}
+
+.loro{
+    background: #f87250;
+    width: 150%;height: 35px;
+    position: absolute;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-43deg) translateY(-20px);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    z-index: 1;
+    box-shadow: 0 5px 10px rgb(0,0,0,0.2);
+    font-weight: 500;
+}
+.form-control{
+    width: 250px;
+}
+.testtt{
+    overflow-wrap: break-word;
+}

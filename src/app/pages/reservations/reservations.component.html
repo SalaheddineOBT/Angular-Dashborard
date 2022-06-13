@@ -1,0 +1,97 @@
+<!-- <div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" style="background-color: #107fb6!important;">
+                        <h3 class="card-title text-center" style="color: #fff!important;font-weight: 500;">Reservations Management</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th> ID </th>
+                                    <th> Name </th>
+                                    <th> Country </th>
+                                    <th> City </th>
+                                    <th> Salary </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> 1 </td>
+                                        <td> Dakota Rice </td>
+                                        <td> Niger </td>
+                                        <td> Oud-Turnhout </td>
+                                        <td class="text-primary"> $36,738 </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+   -->
+
+
+
+
+   <div class="example-header" fxLayout="row" style="margin-top: 6rem;">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+  
+  <div class="example-container mat-elevation-z8 container-fluid" style="margin-top: 1rem;">
+    <mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="ID">
+            <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+            <mat-cell class="text-center" *matCellDef="let row" data-label="ID"> {{row.ID}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="PriceTotal">
+            <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Price Total </mat-header-cell>
+            <mat-cell class="text-center" *matCellDef="let row" data-label="PriceTotal"> {{row.PriceTotal}} $ </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="RentOn">
+            <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Rent On </mat-header-cell>
+            <mat-cell class="text-center" *matCellDef="let row" data-label="RentOn"> {{row.RentOn}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="ReturnOn">
+            <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Return On </mat-header-cell>
+            <mat-cell class="text-center" *matCellDef="let row" data-label="ReturnOn"> {{row.ReturnOn}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="RentDurationDay">
+            <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Rent Duration Day </mat-header-cell>
+            <mat-cell class="text-center" *matCellDef="let row" data-label="RentDurationDay"> {{row.RentDurationDay}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="ReservationDate">
+            <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Reservation Date </mat-header-cell>
+            <mat-cell class="text-center" *matCellDef="let row" data-label="ReservationDate"> {{row.ReservationDate}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Client">
+            <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Client </mat-header-cell>
+            <mat-cell class="text-center" *matCellDef="let row" data-label="Client"> {{row.Client}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Car">
+            <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Car </mat-header-cell>
+            <mat-cell class="text-center" *matCellDef="let row" data-label="Car"> {{row.Car}} </mat-cell>
+        </ng-container>
+        
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" class="text-center"></mat-row>
+    </mat-table>
+    
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+
+<!-- {{reservation | json}} -->
