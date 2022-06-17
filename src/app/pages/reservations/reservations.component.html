@@ -37,9 +37,9 @@
                                     <mat-cell class="text-center" *matCellDef="let row" data-label="ReturnOn"> {{row.ReturnOn}} </mat-cell>
                                 </ng-container>
                         
-                                <ng-container matColumnDef="RentDurationDay">
-                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Rent Duration Day </mat-header-cell>
-                                    <mat-cell class="text-center" *matCellDef="let row" data-label="RentDurationDay"> {{row.RentDurationDay}} </mat-cell>
+                                <ng-container matColumnDef="Etat">
+                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> State </mat-header-cell>
+                                    <mat-cell class="text-center" *matCellDef="let row" data-label="Etat"> {{row.Etat}} </mat-cell>
                                 </ng-container>
                         
                                 <ng-container matColumnDef="ReservationDate">
@@ -54,7 +54,7 @@
                         
                                 <ng-container matColumnDef="Car">
                                     <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Car </mat-header-cell>
-                                    <mat-cell class="text-center" *matCellDef="let row" data-label="Car" style="padding-top:.5rem;padding-bottom:.5rem;"> 
+                                    <mat-cell class="text-center clss" *matCellDef="let row" data-label="Car" style="padding-top:.5rem;padding-bottom:.5rem;"> 
                                         <img src="https://rumbustious-hilltop.000webhostapp.com/API/Photos/cars/{{row.Car}}" style="width: 11rem;height: 6rem;" class="img-thumbnail">
                                     </mat-cell>
                                 </ng-container>

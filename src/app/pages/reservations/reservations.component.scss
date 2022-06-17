@@ -176,7 +176,6 @@ body {
       font-size: 1em;
     }
     
-    /*  Enable this to hide header
     .mat-table .mat-header-cell {
       
       border: 10px solid;
@@ -187,7 +186,7 @@ body {
       position: absolute;
       width: 1px;
     }
-    */
+    
     .mat-table .mat-row {
       border-bottom: 5px solid #ddd;
       display: block;
@@ -221,8 +220,14 @@ body {
       border-bottom: 0;
       justify-content: right !important;
     }
+    .clss{
+        height: 8rem!important;
+    }
       .mat-table .mat-cell:first-child {
       margin-top: 4%;
+    }
+    .mat-cell:last-of-type{
+        height: 5rem!important;
     }
   }
   mat-cell, mat-header-cell, mat-footer-cell

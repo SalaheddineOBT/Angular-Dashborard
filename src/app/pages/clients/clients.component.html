@@ -17,9 +17,11 @@
                         <div class="example-container mat-elevation-z8 container-fluid" style="margin-top: 1rem;">
                             <mat-table [dataSource]="dataSource" matSort>
                         
-                                <ng-container matColumnDef="ID">
-                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-                                    <mat-cell class="text-center" *matCellDef="let row" data-label="ID"> {{row.ID}} </mat-cell>
+                                <ng-container matColumnDef="Photo">
+                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Photo </mat-header-cell>
+                                    <mat-cell class="text-center" *matCellDef="let row" data-label="Photo"> 
+                                        <img class="img-thumbnail" src='./assets/img/user.png' >
+                                    </mat-cell>
                                 </ng-container>
                         
                                 <ng-container matColumnDef="Name">
@@ -31,6 +33,50 @@
                                     <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> National ID </mat-header-cell>
                                     <mat-cell class="text-center" *matCellDef="let row" data-label="NationalId"> {{row.NationalId}} </mat-cell>
                                 </ng-container>
+
+                                <ng-container matColumnDef="NumPermis">
+                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Permis ID </mat-header-cell>
+                                    <mat-cell class="text-center" *matCellDef="let row" data-label="NumPermis"> {{row.NumPermis}} </mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Adresse">
+                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Adresse </mat-header-cell>
+                                    <mat-cell class="text-center" *matCellDef="let row" data-label="Adresse"> {{row.Adresse}} </mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Email">
+                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+                                    <mat-cell class="text-center" *matCellDef="let row" data-label="Email"> {{row.Email}} </mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="NumPhone">
+                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Phone Number </mat-header-cell>
+                                    <mat-cell class="text-center" *matCellDef="let row" data-label="NumPhone"> {{row.NumPhone}} </mat-cell>
+                                </ng-container>
+
+                                <ng-container matColumnDef="Actions">
+                                    <mat-header-cell class="text-center" *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
+                                    <mat-cell class="text-center" *matCellDef="let row" data-label="Action">
+                                        <div class="actions-trigger" [matMenuTriggerFor]="matMenu">
+                                            <i class="material-icons" style="font-size: 35px">list</i>
+                                        </div>
+                                            <mat-menu #matMenu="matMenu" class="cust-menu cust-menu--horizontal cust-menu--actions" overlapTrigger
+                                            xPosition="before">
+                                                <span mat-menu-item class="menu-item" matTooltip="">
+                                                    <i class="material-icons delete">delete</i>
+                                                    <span>Delete</span>
+                                                </span>
+                                                <span mat-menu-item class="menu-item" matTooltip="">
+                                                    <i class="material-icons edit">edit</i>
+                                                    <span>Edit</span>
+                                                </span>
+                                                <span mat-menu-item class="menu-item" matTooltip="">
+                                                    <i class="material-icons visibility">visibility</i>
+                                                    <span class="material-symbols-outlined"> Détails </span>
+                                                </span>
+                                            </mat-menu>
+                                    </mat-cell>
+                                </ng-container>
                                 
                                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                                 <mat-row *matRowDef="let row; columns: displayedColumns;" class="text-center"></mat-row>
@@ -38,7 +84,6 @@
                             
                             <mat-paginator [pageSizeOptions]="[10, 15]"></mat-paginator>
                         </div>
-                        
                     </div>
                 </div>
             </div>

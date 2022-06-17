@@ -1,0 +1,107 @@
+body {
+    font-family: 'Covered By Your Grace', cursive;
+    line-height: 1.25;
+    
+}
+
+mat-cell, mat-header-cell, mat-footer-cell{
+    justify-content: center!important;
+}
+
+
+
+@media screen and (max-width: 960px) {
+    .mat-table {
+        border: 0;
+        vertical-align: middle
+    }
+    .mat-table caption {
+        font-size: 1em;
+    }
+    .mat-table .mat-header-cell {
+        border: 10px solid;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    .mat-table .mat-row {
+        border-bottom: 5px solid #ddd;
+        display: block;
+    }
+    .mat-table .mat-cell {
+            border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 1em;
+        text-align: right;
+        font-weight: bold;
+        height:30px;
+        margin-bottom: 4%;
+    }
+    .mat-table .mat-cell:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: normal;
+        
+        font-size: .85em;
+    }
+    .mat-table .mat-cell:last-child {
+        border-bottom: 0;
+        justify-content: right !important;
+    }
+        .mat-table .mat-cell:first-child {
+        margin-top: 4%;
+    }
+
+    .mat-cell:last-of-type{
+        height: 5rem!important;
+    }
+    mat-cell:first-of-type{   
+        height: 8rem!important;
+    }
+}
+
+
+:host ::ng-deep{
+    .mat-cell:last-of-type, mat-header-cell:last-of-type, mat-footer-cell:last-of-type{
+        justify-content: right !important;
+        max-width: 85px;
+    }
+    mat-cell:first-of-type, mat-header-cell:first-of-type, mat-footer-cell:first-of-type{   
+        justify-content: left !important;
+        max-width: 100px;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        padding-left: 15px !important;
+    }
+}
+
+img{
+    width: 5rem;
+    border-radius: 50%;
+}
+
+.menu-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    .delete{
+        margin-right: 0.7rem;
+        color: #FF4141;
+    }
+    .edit{
+        margin-right: 0.7rem;
+        color: #2FAE90;
+    }
+    .visibility{
+        margin-right: 0.7rem;
+        color: #2B79C3;
+    }
+}
+.actions-trigger{
+    cursor: pointer;
+}

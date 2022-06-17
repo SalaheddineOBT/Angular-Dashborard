@@ -21,15 +21,15 @@ export class FormValidationService {
       ? 'Incorrect Email Format !'
       : formField?.hasError('minlength')
       ? `Password contain at least
-      ${this.getLengthError(fieldErrors?.['minlength'])} characters`
+      ${this.getLengthError(fieldErrors?.['minlength'])} characters !`
       : formField?.hasError('maxlength')
       ? `Password contain max
-      ${this.getLengthError(fieldErrors?.['maxlength'])} characters`
+      ${this.getLengthError(fieldErrors?.['maxlength'])} characters !`
       : formField?.hasError('pattern')
-      ? 'Password must contain one uppercase, one lowercase and one special characters of #?!@$%^&*-'
+      ? 'Password must contain upper/lower/special characters !'
       : formField?.hasError('mismatch')
-      ? 'Passwords mismatch'
-      : 'Unknown error';
+      ? 'Passwords mismatch !'
+      : 'Unknown error !';
   }
   // MAKE LENGTH ERRORS SHORTER
   private getLengthError(fieldError: any): string {

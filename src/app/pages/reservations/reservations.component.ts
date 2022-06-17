@@ -16,7 +16,7 @@ export class ReservationsComponent implements AfterViewInit, OnInit {
     reservations: any = [];
     reservation = [];
 
-    displayedColumns = ['ID', 'PriceTotal', 'RentOn', 'ReturnOn', 'RentDurationDay', 'ReservationDate', 'Client', 'Car', 'Actions'];
+    displayedColumns = ['ID', 'PriceTotal', 'RentOn', 'ReturnOn', 'Etat', 'ReservationDate', 'Client', 'Car', 'Actions'];
     dataSource: MatTableDataSource<Reservation>;
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -54,13 +54,14 @@ export class ReservationsComponent implements AfterViewInit, OnInit {
 
     DeleteRes() {
         Swal.fire({
-        title: 'Are you sure?',
-        text: 'You wont To Delete This Reservation ?',
-        icon: 'question',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+            title: 'Are you sure?',
+            text: 'You wont To Delete This Reservation ?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            heightAuto: false
         }).then((result) => {
         if (result.isConfirmed) {
             Swal.fire(
@@ -81,7 +82,7 @@ export class ReservationsComponent implements AfterViewInit, OnInit {
                 'PriceTotal': element.PriceTotal,
                 'RentOn': element.RentOn,
                 'ReturnOn': element.ReturnOn,
-                'RentDurationDay': element.RentDurationDay,
+                'Etat': element.Etat,
                 'ReservationDate': element.ReservationDate,
                 'Client': element.Client.Name + ' / ' + element.Client.NationalID + ' / ' + element.Client.NumPermis,
                 'Car': element.Car[0].Photo,
@@ -100,7 +101,7 @@ export interface Reservation {
     PriceTotal: any;
     RentOn: any;
     ReturnOn: any;
-    RentDurationDay: any;
+    Etat: any;
     ReservationDate: any;
     Client: any;
     Car: any;
