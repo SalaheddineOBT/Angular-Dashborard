@@ -1,2 +1,10 @@
 # Angular-Dashborard
-#Admin Cars System Management
+#Admin Cars Rental System Management
+
+Actions :
+- Cars Management
+- Reservations Management
+- Clients Management
+- Categoys Management
+- Marques Management
+- Account Admin Management
