@@ -1,7 +1,7 @@
 # Angular-Dashborard
 #Admin Cars Rental System Management
 
-Actions :
+Menu Actions :
 - Cars Management
 - Reservations Management
 - Clients Management
